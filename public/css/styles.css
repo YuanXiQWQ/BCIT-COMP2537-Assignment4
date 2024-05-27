@@ -1,0 +1,139 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #F0F0F0;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+    background-color: #333;
+    color: #F0F0F0;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+#game-controls {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#game-controls button,
+#game-controls select {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#game-controls button {
+    background-color: #007BFF;
+    color: #FFF;
+}
+
+#game-controls button:hover {
+    background-color: #0056B3;
+}
+
+#game-controls select {
+    background-color: #F8F9FA;
+    color: #333;
+}
+
+#header {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#header p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+#game-board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pokemon-card {
+    width: calc(20% - 10px);
+    height: 140px;
+    perspective: 1000px;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.pokemon-card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    position: relative;
+    transform: rotateY(180deg);
+}
+
+.pokemon-card.flipped .pokemon-card-inner {
+    transform: rotateY(0deg);
+}
+
+.pokemon-card-front,
+.pokemon-card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.pokemon-card-front {
+    background: white;
+    border: 1px solid #CCC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon-card-back {
+    background: url('../images/card.webp') no-repeat center center / contain;
+    transform: rotateY(180deg);
+}
+
+@media (max-width: 1200px) {
+    .pokemon-card {
+        width: calc(25% - 10px);
+    }
+}
+
+@media (max-width: 992px) {
+    .pokemon-card {
+        width: calc(33.333% - 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .pokemon-card {
+        width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 576px) {
+    .pokemon-card {
+        width: calc(100% - 10px);
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "pokemon-memory-game",
+  "version": "1.0.0",
+  "description": "COMP 2537 Assignment 4: Pokemon Memory Card Game",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Jiarui Xing",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.1",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  }
+}
