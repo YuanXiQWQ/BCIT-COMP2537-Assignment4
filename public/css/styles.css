@@ -1,20 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #F0F0F0;
     color: #333;
     text-align: center;
     padding: 20px;
     transition: background-color 0.3s, color 0.3s;
+    min-height: 100vh;
 }
 
 body.dark {
-    background-color: #333;
+    background-color: #1E1E1E;
     color: #F0F0F0;
 }
 
 h1 {
     margin-bottom: 20px;
-    font-size: 2em;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #007BFF;
 }
 
 #game-controls {
@@ -31,12 +36,13 @@ h1 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 #game-controls button {
     background-color: #007BFF;
     color: #FFF;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #game-controls button:hover {
@@ -44,8 +50,9 @@ h1 {
 }
 
 #game-controls select {
-    background-color: #F8F9FA;
+    background-color: #FFF;
     color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #header {
@@ -53,11 +60,11 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 20px;
+    font-size: 1.2em;
 }
 
 #header p {
     margin: 0;
-    font-size: 1.2em;
 }
 
 #game-board {
@@ -67,6 +74,12 @@ h1 {
     gap: 10px;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: #E0E0E0;
+    padding: 20px;
+    border-radius: 10px;
+    flex-grow: 1;
+    min-height: 30vh;
+    min-width: 80vw;
 }
 
 .pokemon-card {
@@ -76,7 +89,8 @@ h1 {
     cursor: pointer;
     border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #F8F9FA;
 }
 
 .pokemon-card-inner {
@@ -112,6 +126,10 @@ h1 {
 .pokemon-card-back {
     background: url('../images/card.webp') no-repeat center center / contain;
     transform: rotateY(180deg);
+}
+
+.pokemon-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 1200px) {
